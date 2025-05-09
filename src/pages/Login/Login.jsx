@@ -1,25 +1,20 @@
-import { Link } from 'react-router-dom';
 import Lottie from 'lottie-react';
-import img from '../../assets/Animation - 1746766265623.json'
+import img from '../../assets/Animation - 1746779783456.json'
 import useAuth from '../../hook/useAuth';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
-const Register = () => {
-    const { user, setUser, updateUserProfile, createUser, googleLogin } = useAuth();
+const Login = () => {
+    const { googleLogin, signInUser } = useAuth();
 
-    const handelRegisterFormSubmit = async event => {
+    const handelLoginFormSubmit = async event => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
-        const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-
         try {
-            await createUser(email, password);
-            updateUserProfile(name, photo);
-            setUser({ ...user, displayName: name, photoURL: photo });
-            toast.success('user create successfully');
+            await signInUser(email, password);
+            toast.success('login successfully');
             form.reset();
         } catch (err) {
             toast.error(err?.message);
@@ -33,12 +28,11 @@ const Register = () => {
             toast.error(err?.message)
         }
     }
-
     return (
         <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
             <div className='flex items-center justify-center'>
                 <div className="hidden bg-cover lg:block">
-                    <p className='text-3xl font-serif text-center'>Sign Up now</p>
+                    <p className='text-3xl font-serif text-center'>Sign In now</p>
                     <Lottie className='' animationData={img}></Lottie>
                 </div>
             </div>
@@ -81,7 +75,7 @@ const Register = () => {
                         </svg>
                     </div>
                     <span className="w-5/6 px-4 py-3 font-bold text-center">
-                        Sign up with Google
+                        Sign in with Google
                     </span>
                 </a>
 
@@ -91,40 +85,12 @@ const Register = () => {
                         href="#"
                         className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
                     >
-                        or sign up with email
+                        or sign in with email
                     </a>
                     <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
                 </div>
 
-                <form onSubmit={handelRegisterFormSubmit}>
-                    <div className="mt-4">
-                        <label
-                            htmlFor="name"
-                            className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-                        >
-                            User Name
-                        </label>
-                        <input
-                            id="name"
-                            type="text"
-                            name='name'
-                            className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                        />
-                    </div>
-                    <div className="mt-4">
-                        <label
-                            htmlFor="photo"
-                            className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-                        >
-                            Photo URL
-                        </label>
-                        <input
-                            id="photo"
-                            type="text"
-                            name='photo'
-                            className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                        />
-                    </div>
+                <form onSubmit={handelLoginFormSubmit}>
                     <div className="mt-4">
                         <label
                             htmlFor="email"
@@ -160,17 +126,17 @@ const Register = () => {
 
                     <div className="mt-6 border rounded-2xl">
                         <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
-                            Sign Up
+                            Sign In
                         </button>
                     </div>
                 </form>
 
                 <div className="flex items-center justify-between mt-4">
                     <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-                    <Link to='/login'
+                    <Link to='/register'
                         className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
                     >
-                        or sign in
+                        or sign up
                     </Link>
                     <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                 </div>
@@ -179,4 +145,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Login;

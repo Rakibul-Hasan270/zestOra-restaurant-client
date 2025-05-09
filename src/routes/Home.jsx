@@ -1,11 +1,9 @@
-import React from 'react';
-import Register from '../pages/Register/Register';
+import Navbar from "../layout/Navbar/Navbar";
 
 const Home = () => {
     return (
         <div>
-            This is home components
-            <Register></Register>
+            <h3 className="text-7xl">this is home</h3>
         </div>
     );
 };
