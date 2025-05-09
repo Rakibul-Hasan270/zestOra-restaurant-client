@@ -1,9 +1,9 @@
-import Navbar from "../layout/Navbar/Navbar";
+import Carousel from "../layout/banner/Carousel";
 
 const Home = () => {
     return (
         <div>
-            <h3 className="text-7xl">this is home</h3>
+            <Carousel></Carousel>
         </div>
     );
 };

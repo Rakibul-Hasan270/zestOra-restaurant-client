@@ -4,9 +4,9 @@ import useAuth from '../../hook/useAuth';
 const Navbar = () => {
     const { user, logOut } = useAuth();
 
-    const links = <div className='flex'>
-        <li><NavLink>Home</NavLink></li>
-        <li><NavLink to='/login'>Login</NavLink></li>
+    const links = <div className='md:flex items-center justify-center'>
+        <li><NavLink to="/" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Home</NavLink></li>
+        <li><NavLink to="/login" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Login</NavLink></li>
     </div>
 
     return (
@@ -22,14 +22,14 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl">Zest Ora</Link>
+                <Link to='/' className="btn btn-ghost text-xl">Zest<span className='text-cyan-500'>Ora</span></Link>
             </div>
-            <div className="navbar-end hidden lg:flex mr-6">
+            <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {links}
                 </ul>
             </div>
-            <div className="">
+            <div className="navbar-end">
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
