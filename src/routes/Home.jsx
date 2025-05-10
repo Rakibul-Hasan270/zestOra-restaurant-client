@@ -4,7 +4,7 @@ import TabItem from "../layout/TabItem/TabItem";
 
 const Home = () => {
     return (
-        <div>
+        <div className="space-y-20">
             <Carousel></Carousel>
             <TabItem></TabItem>
             <About></About>
