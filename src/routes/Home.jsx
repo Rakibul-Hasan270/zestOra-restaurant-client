@@ -1,10 +1,12 @@
 import About from "../layout/About/About";
 import Carousel from "../layout/banner/Carousel";
+import TabItem from "../layout/TabItem/TabItem";
 
 const Home = () => {
     return (
         <div>
             <Carousel></Carousel>
+            <TabItem></TabItem>
             <About></About>
         </div>
     );

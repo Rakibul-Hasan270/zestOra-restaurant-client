@@ -4,10 +4,10 @@ import img from '../../assets/Animation - 1746787141788.json'
 
 const About = () => {
     return (
-        <div className=" py-12 px-4 bg-base-100">
+        <div className="max-w-6xl mx-auto bg-base-100">
             <p className="text-5xl font-bold text-center mb-12">About Us</p>
 
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 items-stretch">
 
                 <div className="bg-base-100 shadow-lg rounded-lg p-6 h-full flex flex-col justify-between"
                 >
@@ -29,9 +29,9 @@ const About = () => {
                         </div>
                         <div className="collapse collapse-arrow join-item border border-base-300">
                             <input type="radio" name="who" />
-                            <div className="collapse-title font-semibold">Behind Fusion Ghor</div>
+                            <div className="collapse-title font-semibold">Behind Zestora</div>
                             <div className="collapse-content text-sm">
-                                Behind Fusion Ghor lies a passion for blending tradition with creativity, serving food that tells a story with every delicious bite.
+                                Behind zestora lies a passion for blending tradition with creativity, serving food that tells a story with every delicious bite.
                             </div>
                         </div>
                     </div>
