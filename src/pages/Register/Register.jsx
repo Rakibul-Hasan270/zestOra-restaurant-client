@@ -5,7 +5,7 @@ import useAuth from '../../hook/useAuth';
 import toast from 'react-hot-toast';
 
 const Register = () => {
-    const { user, setUser, updateUserProfile, createUser, googleLogin } = useAuth();
+    const { updateUserProfile, createUser, googleLogin } = useAuth();
 
     const handelRegisterFormSubmit = async event => {
         event.preventDefault();
@@ -18,7 +18,7 @@ const Register = () => {
         try {
             await createUser(email, password);
             updateUserProfile(name, photo);
-            setUser({ ...user, displayName: name, photoURL: photo });
+            // setUser({ ...user, displayName: name, photoURL: photo });
             toast.success('user create successfully');
             form.reset();
         } catch (err) {

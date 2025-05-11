@@ -7,7 +7,7 @@ const axiosSecure = axios.create({
 
 const useAxiosSecure = () => {
     axiosSecure.interceptors.response.use(res => {
-        console.log(res);
+        // console.log(res);
         return res;
     },
         err => {
