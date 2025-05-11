@@ -42,16 +42,13 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="h-full flex items-center justify-center"
-                >
+                <div className="flex items-center justify-center">
                     <div className=''>
-                        <Lottie className='h-[500px] w-[600px]' animationData={img} loop={true} />
+                        <Lottie className='hidden md:block md:h-[500px] md:w-[600px]' animationData={img} loop={true} />
                     </div>
-
                 </div>
 
-                <div className="bg-base-100 shadow-lg rounded-lg p-6 h-full flex flex-col justify-between"
-                >
+                <div className="bg-base-100 shadow-lg rounded-lg p-6 h-full flex flex-col justify-between">
                     <p className='italic text-3xl font-bold text-center mb-6'>What's Special?</p>
                     <div className="join join-vertical">
                         <div className="collapse collapse-arrow join-item border border-base-300">

@@ -1,15 +1,18 @@
+import { Link } from "react-router-dom";
 
 const ItemCard = ({ item }) => {
 
-    const { availability, category, description, image, is_veg, name, price, rating } = item;
+    const { availability, category, description, image, is_veg, name, price, rating, _id } = item;
 
     return (
-        <div className="max-w-lg p-4 shadow-md bg-gray-50 text-gray-800">
+        <Link to={`/item_details/${_id}`} className="p-4 shadow-md bg-gray-50 text-gray-800">
             <div className="flex justify-between pb-4 border-bottom">
                 <div className="flex items-center">
-                    <a rel="noopener noreferrer" href="#" className="mb-0 capitalize text-gray-800">{category}</a>
+                    <p rel="noopener noreferrer" className="mb-0 capitalize text-gray-800">{category}</p>
                 </div>
-                <a rel="noopener noreferrer" href="#">is_veg: {is_veg}</a>
+                <div>
+                    <p rel="noopener noreferrer">is_veg: {is_veg}</p>
+                </div>
             </div>
             <div className="space-y-4">
                 <div className="space-y-2">
@@ -21,13 +24,13 @@ const ItemCard = ({ item }) => {
                     </div>
                 </div>
                 <div className="space-y-2">
-                    <a rel="noopener noreferrer" href="#" className="block">
+                    <div rel="noopener noreferrer" className="block">
                         <h3 className="text-xl font-semibold text-default-600">{name}</h3>
-                    </a>
+                    </div>
                     <p className="leading-snug text-gray-600">{description}</p>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
